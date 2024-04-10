@@ -1,0 +1,33 @@
+.WeatherItem {
+  background-color: rgb(236, 236, 236);
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.WeatherItem .weather_img {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.WeatherItem_on_1 {
+  color: white;
+  background-color: #e6f1fe;
+}
+.WeatherItem_on_2 {
+  color: white;
+  background-color: #e7ecf2;
+}
+.WeatherItem_on_3 {
+  color: white;
+  background-color: #d6dfea;
+}
+.WeatherItem_on_4 {
+  color: white;
+  background-color: #d9dcdf;
+}
+.WeatherItem_on_5 {
+  color: white;
+  background-color: #4b4d51;
+}

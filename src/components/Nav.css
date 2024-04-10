@@ -1,0 +1,40 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 600px;
+  height: 20px;
+  margin-left: -20px;
+  z-index: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: -3px -0.5px 40px rgba(0, 0, 0, 0.15);
+  background-color: #white;
+  transition: background-color ease-in;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.home {
+  position: fixed;
+  width: 45px;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 275px;
+}
+
+.fashion {
+  position: fixed;
+  width: 45px;
+  justify-content: flex-start;
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.weather {
+  position: fixed;
+  width: 45px;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-left: 440px;
+}

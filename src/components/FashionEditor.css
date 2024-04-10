@@ -1,0 +1,60 @@
+.FashionEditor {
+  margin-bottom: 50px;
+}
+
+.FashionEditor > section {
+  margin-bottom: 40px;
+}
+
+.FashionEditor > section > h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.FashionEditor > section > input,
+textarea {
+  background-color: #e6f1fe;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+.FashionEditor > section > textarea {
+  padding: 10px;
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.Editor .button_section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -30px;
+}
+
+.img_section img {
+  max-width: 100%;
+  max-height: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.btn-upload {
+  width: 100px;
+  height: 30px;
+  background: #e6f1fe;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#file {
+  display: none;
+}
