@@ -164,7 +164,7 @@ function App() {
   const onCreateFashion = (createdDate, content, photo) => {
     fashiondispatch({
       type: "CREATE_FASHION",
-      fashiondata: {
+      data: {
         id: idRefFashion.current++,
         createdDate,
         photo,
@@ -192,7 +192,7 @@ function App() {
   const onUpdateFashion = (id, createdDate, content, photo) => {
     fashiondispatch({
       type: "UPDATE_FASHION",
-      fashiondata: {
+      data: {
         id,
         createdDate,
         photo,

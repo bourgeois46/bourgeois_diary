@@ -17,11 +17,18 @@
 }
 
 .nav button {
-  margin-left: 20px;
+  margin-left: 33px;
   padding: 6px 12px;
   border-radius: 10px;
   background-color: #dbead5;
   border: none;
   color: black;
   cursor: pointer;
+}
+
+.diary {
+  position: absolute;
+  top: 15px;
+  margin-right: 10px;
+  width: 18px;
 }

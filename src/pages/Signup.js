@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./Signup.module.css";
 import useSignup from "../hooks/useSignup";
 import Header from "../components/Header";
-import LoginSignupNav from "../components/LoginSignupNav";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +29,12 @@ const Signup = () => {
       <Header title="일기장 시작 !" />
 
       <form className={styles.signup_form} onSubmit={handleSubmit}>
-        <fieldset>
+        <fieldset
+          style={{
+            border: `1px solid rgb(226, 226, 226)`,
+            borderRadius: "10px",
+          }}
+        >
           <legend>회원가입</legend>
           <label htmlFor="myEmail">email :</label>
           <input

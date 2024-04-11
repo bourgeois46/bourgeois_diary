@@ -25,6 +25,11 @@ const Editor = ({ initData, onSubmit }) => {
     const file = e.target.files[0];
     const imageUrl = URL.createObjectURL(file);
     setUploadedImage(imageUrl);
+
+    setInput({
+      ...input,
+      photo: imageUrl,
+    });
   };
 
   useEffect(() => {
@@ -72,8 +77,8 @@ const Editor = ({ initData, onSubmit }) => {
       <section className="img_section">
         <h4>오늘의 사진</h4>
         <div className="img_section">
-          {uploadedImage ? (
-            <img src={uploadedImage} alt="" />
+          {input.photo ? (
+            <img src={input.photo} alt="" />
           ) : (
             <img src={upload_img} alt="" />
           )}
