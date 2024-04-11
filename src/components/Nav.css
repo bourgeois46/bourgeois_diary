@@ -17,18 +17,18 @@
 
 .home {
   position: fixed;
-  width: 45px;
+  width: 43px;
   justify-content: center;
   cursor: pointer;
-  margin-left: 275px;
+  margin-left: 90px;
 }
 
 .fashion {
   position: fixed;
-  width: 45px;
+  width: 50px;
   justify-content: flex-start;
   cursor: pointer;
-  margin-left: 100px;
+  margin-left: 220px;
 }
 
 .weather {
@@ -36,5 +36,13 @@
   width: 45px;
   justify-content: flex-end;
   cursor: pointer;
-  margin-left: 440px;
+  margin-left: 350px;
+}
+
+.my {
+  position: fixed;
+  width: 50px;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-left: 480px;
 }

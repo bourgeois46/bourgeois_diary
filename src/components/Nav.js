@@ -3,6 +3,7 @@ import "./Nav.css";
 import home from "../assets/home.png";
 import fashion from "../assets/fashion.png";
 import weather from "../assets/weather.png";
+import my from "../assets/my.png";
 
 const Nav = () => {
   return (
@@ -11,7 +12,7 @@ const Nav = () => {
         src={home}
         alt="home"
         className="home"
-        onClick={() => (window.location.href = "/")}
+        onClick={() => (window.location.href = "/home")}
       />
       <img
         src={fashion}
@@ -24,6 +25,12 @@ const Nav = () => {
         alt="weather"
         className="weather"
         onClick={() => (window.location.href = "/weather")}
+      />
+      <img
+        src={my}
+        alt="my"
+        className="my"
+        onClick={() => (window.location.href = "/")}
       />
     </div>
   );

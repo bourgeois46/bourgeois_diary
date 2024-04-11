@@ -64,7 +64,7 @@ const Fashion = () => {
 const StyledButton = styled.button`
   margin-left: 480px;
   position: absolute;
-  top: 100px;
+  top: 140px;
   width: 120px;
   height: 40px;
   background: #eae2fd;

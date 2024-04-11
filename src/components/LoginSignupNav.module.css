@@ -1,0 +1,27 @@
+.nav {
+  background-color: white;
+  padding: 10px;
+}
+
+.nav .list_nav {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav button {
+  margin-left: 20px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background-color: #dbead5;
+  border: none;
+  color: black;
+  cursor: pointer;
+}

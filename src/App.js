@@ -1,5 +1,5 @@
 import { useReducer, useRef, createContext } from "react";
-import { Route, Routes, Outlet } from "react-router-dom";
+import { Route, Routes, Outlet, Navigate } from "react-router-dom";
 import Diary from "./pages/Diary";
 import Home from "./pages/Home";
 import New from "./pages/New";
@@ -20,6 +20,10 @@ import photo_2 from "./assets/photo_2.jpg";
 import photo_3 from "./assets/photo_3.jpg";
 import photo_4 from "./assets/photo_4.jpg";
 import FashionDiary from "./pages/FashionDiary";
+import { useAuthContext } from "./hooks/useAuthContext";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import LoginSignupNav from "./components/LoginSignupNav";
 
 const Layout = () => {
   return (
@@ -213,48 +217,82 @@ function App() {
     });
   };
 
+  const { isAuthReady, user } = useAuthContext();
+
   return (
     <>
       <DiaryStateContext.Provider value={data}>
-        <DiaryDispatchContext.Provider
-          value={{
-            onCreate,
-            onUpdate,
-            onDelete,
-          }}
-        >
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/new_diary" element={<New />} />
-              <Route path="/diary/:id" element={<Diary />} />
-              <Route path="/edit/:id" element={<Edit />} />
-              <Route path="/weather" element={<Weather />} />
-              {/* <Route path="*" element={<Notfound />} /> */}
-            </Route>
-          </Routes>
+        <DiaryDispatchContext.Provider value={{ onCreate, onDelete, onUpdate }}>
+          <FashionStateContext.Provider value={fashiondata}>
+            <FashionDispatchContext.Provider
+              value={{ onCreateFashion, onDeleteFashion, onUpdateFashion }}
+            >
+              {isAuthReady ? (
+                <>
+                  <LoginSignupNav />
+                  <Routes>
+                    <Route path="/" element={<Layout />}>
+                      <Route
+                        path="/"
+                        element={
+                          user ? (
+                            <Home />
+                          ) : (
+                            <Navigate replace={true} to="/login" />
+                          )
+                        }
+                      />
+                      <Route
+                        path="/login"
+                        element={
+                          !user ? <Login /> : <Navigate replace={true} to="/" />
+                        }
+                      />
+                      <Route
+                        path="/signup"
+                        element={
+                          !user ? (
+                            <Signup />
+                          ) : (
+                            <Navigate replace={true} to="/" />
+                          )
+                        }
+                      />
+
+                      <Route path="/home" element={<Home />} />
+                      <Route
+                        path="/new_diary"
+                        element={<New onCreate={onCreate} />}
+                      />
+                      <Route path="/diary/:id" element={<Diary />} />
+                      <Route path="/edit/:id" element={<Edit />} />
+                      <Route path="/weather" element={<Weather />} />
+                      <Route path="*" element={<Notfound />} />
+
+                      <Route path="/fashion" element={<Fashion />} />
+                      <Route path="/roullet" element={<Roullet />} />
+                      <Route
+                        path="/new_fashion"
+                        element={<NewFashion onCreate={onCreateFashion} />}
+                      />
+                      <Route
+                        path="/fashion_diary/:id"
+                        element={<FashionDiary />}
+                      />
+                      <Route
+                        path="/fashion_edit/:id"
+                        element={<FashionEdit />}
+                      />
+                    </Route>
+                  </Routes>
+                </>
+              ) : (
+                "loading..."
+              )}
+            </FashionDispatchContext.Provider>
+          </FashionStateContext.Provider>
         </DiaryDispatchContext.Provider>
       </DiaryStateContext.Provider>
-
-      <FashionStateContext.Provider value={fashiondata}>
-        <FashionDispatchContext.Provider
-          value={{
-            onCreateFashion,
-            onUpdateFashion,
-            onDeleteFashion,
-          }}
-        >
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route path="/fashion" element={<Fashion />} />
-              <Route path="/roullet" element={<Roullet />} />
-              <Route path="/new_fashion" element={<NewFashion />} />
-              <Route path="/fashion_diary/:id" element={<FashionDiary />} />
-              <Route path="/fashion_edit/:id" element={<FashionEdit />} />
-            </Route>
-          </Routes>
-        </FashionDispatchContext.Provider>
-      </FashionStateContext.Provider>
     </>
   );
 }
