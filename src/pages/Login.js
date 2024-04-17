@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import useLogin from "../hooks/useLogin";
 import Header from "../components/Header";
-import LoginSignupNav from "../components/LoginSignupNav";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,8 +26,18 @@ const Login = () => {
     <>
       <Header title="일기장 시작 !" />
 
-      <form className={styles.login_form} onSubmit={handleSubmit}>
-        <fieldset>
+      <form
+        className={styles.login_form}
+        onSubmit={handleSubmit}
+        action=""
+        method=""
+      >
+        <fieldset
+          style={{
+            border: `1px solid rgb(226, 226, 226)`,
+            borderRadius: "10px",
+          }}
+        >
           <legend>로그인</legend>
           <label htmlFor="myEmail">email :</label>
           <input
@@ -53,7 +62,7 @@ const Login = () => {
               로그인
             </button>
           )}
-          {isPending && <strong>로그인 진행중입니다...</strong>}
+          {isPending && <div>로그인 진행중입니다...</div>}
           {error && <strong>{error}</strong>}
         </fieldset>
       </form>

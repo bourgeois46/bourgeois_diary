@@ -3,6 +3,7 @@ import styles from "./LoginSignupNav.module.css";
 import { Link } from "react-router-dom";
 import useLogout from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import diary from "../assets/diary.png";
 
 const LoginSignupNav = () => {
   const { logout } = useLogout();
@@ -25,6 +26,7 @@ const LoginSignupNav = () => {
         {user && (
           <div>
             <strong>{user.displayName}님의 일기장</strong>
+            <img src={diary} className={styles.diary} alt="diary" />
             <button type="button" onClick={logout}>
               로그아웃
             </button>

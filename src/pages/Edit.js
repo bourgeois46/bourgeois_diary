@@ -26,7 +26,8 @@ const Edit = () => {
         input.createdDate.getTime(),
         input.emotionId,
         input.weatherId,
-        input.content
+        input.content,
+        input.photo
       );
     nav("/", { replace: true });
   };

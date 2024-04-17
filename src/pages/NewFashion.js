@@ -10,7 +10,8 @@ const NewFashion = () => {
   const nav = useNavigate();
 
   const onSubmit = (input) => {
-    onCreateFashion(input.createdDate.getTime(), input.photo, input.content);
+    console.log(JSON.stringify(input));
+    onCreateFashion(input.createdDate.getTime(), input.content, input.photo);
     nav("/fashion", { replace: true });
   };
 

@@ -25,6 +25,11 @@ const Editor = ({ initData, onSubmit }) => {
     const file = e.target.files[0];
     const imageUrl = URL.createObjectURL(file);
     setUploadedImage(imageUrl);
+
+    setInput({
+      ...input,
+      photo: imageUrl,
+    });
   };
 
   useEffect(() => {
@@ -72,10 +77,10 @@ const Editor = ({ initData, onSubmit }) => {
       <section className="img_section">
         <h4>오늘의 사진</h4>
         <div className="img_section">
-          {uploadedImage ? (
-            <img src={uploadedImage} alt="" />
+          {input.photo ? (
+            <img src={input.photo} alt="input_photo" />
           ) : (
-            <img src={upload_img} alt="" />
+            <img src={upload_img} alt="upload_img" />
           )}
           <label htmlFor="file">
             <div className="btn-upload">파일 업로드하기</div>
