@@ -62,7 +62,7 @@ const Login = () => {
               로그인
             </button>
           )}
-          {isPending && <strong>로그인 진행중입니다...</strong>}
+          {isPending && <div>로그인 진행중입니다...</div>}
           {error && <strong>{error}</strong>}
         </fieldset>
       </form>

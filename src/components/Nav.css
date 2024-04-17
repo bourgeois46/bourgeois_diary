@@ -17,32 +17,61 @@
 
 .home {
   position: fixed;
-  width: 43px;
+  width: 35px;
   justify-content: center;
   cursor: pointer;
-  margin-left: 90px;
+  margin-left: 80px;
+  bottom: 18px;
+}
+
+.home_text {
+  position: absolute;
+  left: 113px;
+  padding-top: 40px;
 }
 
 .fashion {
   position: fixed;
-  width: 50px;
+  width: 40px;
   justify-content: flex-start;
   cursor: pointer;
   margin-left: 220px;
+  bottom: 18px;
+}
+
+.fashion_text {
+  position: absolute;
+  left: 253px;
+  padding-top: 40px;
 }
 
 .weather {
   position: fixed;
-  width: 45px;
+  width: 40px;
   justify-content: flex-end;
   cursor: pointer;
   margin-left: 350px;
+  bottom: 18px;
+}
+
+.weather_text {
+  position: absolute;
+  left: 380px;
+  padding-top: 40px;
 }
 
 .my {
   position: fixed;
-  width: 50px;
+  width: 42px;
   justify-content: flex-end;
   cursor: pointer;
   margin-left: 480px;
+  bottom: 18px;
+}
+
+.my_text {
+  position: absolute;
+  left: 503px;
+  padding-top: 40px;
+  cursor: pointer;
 }

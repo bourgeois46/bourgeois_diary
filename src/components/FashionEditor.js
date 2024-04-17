@@ -72,9 +72,9 @@ const FashionEditor = ({ initData, onSubmit }) => {
         <h4>코디 사진</h4>
         <div className="img_section">
           {input.photo ? (
-            <img src={input.photo} alt="" />
+            <img src={input.photo} alt="input.photo" />
           ) : (
-            <img src={upload_img} alt="" />
+            <img src={upload_img} alt="upload_img" />
           )}
           <label htmlFor="file">
             <div className="btn-upload">파일 업로드하기</div>
@@ -99,7 +99,6 @@ const FashionEditor = ({ initData, onSubmit }) => {
           onClick={onClickSubmitButton}
           text={"작성완료"}
           type={"POSITIVE"}
-          className="under_button2"
         />
       </section>
     </div>

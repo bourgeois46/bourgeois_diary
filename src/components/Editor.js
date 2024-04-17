@@ -78,9 +78,9 @@ const Editor = ({ initData, onSubmit }) => {
         <h4>오늘의 사진</h4>
         <div className="img_section">
           {input.photo ? (
-            <img src={input.photo} alt="" />
+            <img src={input.photo} alt="input_photo" />
           ) : (
-            <img src={upload_img} alt="" />
+            <img src={upload_img} alt="upload_img" />
           )}
           <label htmlFor="file">
             <div className="btn-upload">파일 업로드하기</div>

@@ -121,7 +121,7 @@ const StyledImage = styled.img`
   width: 50px;
   height: 50px;
   position: fixed;
-  top: 120px;
+  top: 170px;
 `;
 
 const StyledCanvas = styled.div`

@@ -217,7 +217,7 @@ function App() {
     });
   };
 
-  const { isAuthReady, user } = useAuthContext();
+  const { user } = useAuthContext();
 
   return (
     <>
@@ -227,68 +227,57 @@ function App() {
             <FashionDispatchContext.Provider
               value={{ onCreateFashion, onDeleteFashion, onUpdateFashion }}
             >
-              {isAuthReady ? (
-                <>
-                  <LoginSignupNav />
-                  <Routes>
-                    <Route path="/" element={<Layout />}>
-                      <Route
-                        path="/"
-                        element={
-                          user ? (
-                            <Home />
-                          ) : (
-                            <Navigate replace={true} to="/login" />
-                          )
-                        }
-                      />
-                      <Route
-                        path="/login"
-                        element={
-                          !user ? <Login /> : <Navigate replace={true} to="/" />
-                        }
-                      />
-                      <Route
-                        path="/signup"
-                        element={
-                          !user ? (
-                            <Signup />
-                          ) : (
-                            <Navigate replace={true} to="/" />
-                          )
-                        }
-                      />
+              <>
+                <LoginSignupNav />
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route
+                      path="/"
+                      element={
+                        user ? (
+                          <Home />
+                        ) : (
+                          <Navigate replace={true} to="/login" />
+                        )
+                      }
+                    />
+                    <Route
+                      path="/login"
+                      element={
+                        !user ? <Login /> : <Navigate replace={true} to="/" />
+                      }
+                    />
+                    <Route
+                      path="/signup"
+                      element={
+                        !user ? <Signup /> : <Navigate replace={true} to="/" />
+                      }
+                    />
 
-                      <Route path="/home" element={<Home />} />
-                      <Route
-                        path="/new_diary"
-                        element={<New onCreate={onCreate} />}
-                      />
-                      <Route path="/diary/:id" element={<Diary />} />
-                      <Route path="/edit/:id" element={<Edit />} />
-                      <Route path="/weather" element={<Weather />} />
-                      <Route path="*" element={<Notfound />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route
+                      path="/new_diary"
+                      element={<New onCreate={onCreate} />}
+                    />
+                    <Route path="/diary/:id" element={<Diary />} />
+                    <Route path="/edit/:id" element={<Edit />} />
+                    <Route path="/weather" element={<Weather />} />
+                    <Route path="*" element={<Notfound />} />
 
-                      <Route path="/fashion" element={<Fashion />} />
-                      <Route path="/roullet" element={<Roullet />} />
-                      <Route
-                        path="/new_fashion"
-                        element={<NewFashion onCreate={onCreateFashion} />}
-                      />
-                      <Route
-                        path="/fashion_diary/:id"
-                        element={<FashionDiary />}
-                      />
-                      <Route
-                        path="/fashion_edit/:id"
-                        element={<FashionEdit />}
-                      />
-                    </Route>
-                  </Routes>
-                </>
-              ) : (
-                "loading..."
-              )}
+                    <Route path="/fashion" element={<Fashion />} />
+                    <Route path="/roullet" element={<Roullet />} />
+                    <Route
+                      path="/new_fashion"
+                      element={<NewFashion onCreate={onCreateFashion} />}
+                    />
+                    <Route
+                      path="/fashion_diary/:id"
+                      element={<FashionDiary />}
+                    />
+                    <Route path="/fashion_edit/:id" element={<FashionEdit />} />
+                  </Route>
+                </Routes>
+              </>
             </FashionDispatchContext.Provider>
           </FashionStateContext.Provider>
         </DiaryDispatchContext.Provider>
