@@ -1,1 +1,1 @@
-deploy ([링크](https://bourgeoisdiary.web.app))
+배포 ([링크](https://bourgeoisdiary.web.app))
