@@ -1,1 +1,1 @@
-bourgeoisDiary (https://bourgeoisdiary.web.app)
+[bourgeoisDiary](https://bourgeoisdiary.web.app)
