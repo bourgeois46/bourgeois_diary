@@ -1,1 +1,1 @@
-배포 ([링크](https://bourgeoisdiary.web.app))
+bourgeoisDiary (https://bourgeoisdiary.web.app)
